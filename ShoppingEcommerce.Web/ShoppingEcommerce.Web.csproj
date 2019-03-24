@@ -180,6 +180,16 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppingEcommerce.DataAccess\ShoppingEcommerce.DataAccess.csproj">
+      <Project>{f413fa7f-71dc-4bcf-b39d-68df9859b793}</Project>
+      <Name>ShoppingEcommerce.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoppingEcommerce.Services\ShoppingEcommerce.Services.csproj">
+      <Project>{ff1b8eb3-8cd9-4d2e-9f0e-25b23b74109f}</Project>
+      <Name>ShoppingEcommerce.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
