@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {
+    "@types/knockout": "^3.4.64",
+    "knockout": "^3.5.0",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.4000"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
