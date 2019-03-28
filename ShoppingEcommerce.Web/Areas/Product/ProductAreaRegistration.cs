@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace ShoppingEcommerce.Web.Areas.Areas
+namespace ShoppingEcommerce.Web.Areas.Product
 {
-    public class AreasAreaRegistration : AreaRegistration 
+    public class ProductAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "Areas";
+                return "Product";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Areas_default",
-                "Areas/{controller}/{action}/{id}",
+                "Product_default",
+                "Product/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }
