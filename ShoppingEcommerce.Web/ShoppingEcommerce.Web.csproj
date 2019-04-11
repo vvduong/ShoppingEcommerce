@@ -129,12 +129,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\animsition.css" />
+    <Content Include="Content\animsition.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\util.css" />
+    <Content Include="Content\daterangepicker.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
@@ -146,6 +152,9 @@
     <Content Include="Content\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.svg" />
     <Content Include="Content\fonts\Montserrat\OFL.txt" />
     <Content Include="Content\fonts\PlayfairDisplay\OFL.txt" />
+    <Content Include="Content\hamburgers.css" />
+    <Content Include="Content\hamburgers.min.css" />
+    <Content Include="Content\icon-font.min.css" />
     <Content Include="Content\images\about-01.jpg" />
     <Content Include="Content\images\about-02.jpg" />
     <Content Include="Content\images\avatar-01.jpg" />
@@ -231,6 +240,18 @@
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\map-custom.js" />
     <Content Include="Content\js\slick-custom.js" />
+    <Content Include="Content\lightbox.css" />
+    <Content Include="Content\lightbox.min.css" />
+    <Content Include="Content\magnific-popup.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\material-design-iconic-font.css" />
+    <Content Include="Content\material-design-iconic-font.min.css" />
+    <Content Include="Content\perfect-scrollbar.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\select2.min.css" />
+    <Content Include="Content\slick-theme.css" />
+    <Content Include="Content\slick.css" />
+    <Content Include="Content\util.css" />
     <Content Include="Content\vendor\animate\animate.css" />
     <Content Include="Content\vendor\animsition\css\animsition.css" />
     <Content Include="Content\vendor\animsition\css\animsition.min.css" />
