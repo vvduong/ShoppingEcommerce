@@ -64,6 +64,24 @@ namespace ShoppingEcommerce.Web
                     "~/Content/css/util.css",
                     "~/Content/css/main.css"
                     ));
+      bundles.Add(new ScriptBundle("~/Content/js").Include(
+                     "~/Content/vendor/jquery/jquery-3.2.1.min.js",
+                     "~/Content/vendor/animsition/js/animsition.min.js",
+                     "~/Content/vendor/bootstrap/js/popper.js",
+                     "~/Content/vendor/bootstrap/js/bootstrap.min.js",
+                     "~/Content/vendor/select2/select2.min.js",
+                     "~/Content/vendor/daterangepicker/moment.min.js",
+                     "~/Content/vendor/daterangepicker/daterangepicker.js",
+                     "~/Content/vendor/slick/slick.min.js",
+                     "~/Content/js/slick-custom.js",
+                     "~/Content/vendor/parallax100/parallax100.js",
+                     "~/Content/vendor/MagnificPopup/jquery.magnific-popup.min.js",
+                     "~/Content/vendor/isotope/isotope.pkgd.min.js",
+                     "~/Content/vendor/sweetalert/sweetalert.min.js",
+                     "~/Content/vendor/perfect-scrollbar/perfect-scrollbar.min.js",
+                     "~/Content/js/main.js"
+                     ));
+
     }
   }
 }
