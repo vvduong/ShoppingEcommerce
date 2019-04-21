@@ -1,12 +1,10 @@
-using ShoppingEcommerce.Web;
-using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using System.Linq;
 using System.Web.Mvc;
-using Unity.AspNet.Mvc;
-using WebActivatorEx;
 
-[assembly: PreApplicationStartMethod(typeof(UnityMvcActivator), nameof(UnityMvcActivator.Start))]
-[assembly: ApplicationShutdownMethod(typeof(UnityMvcActivator), nameof(UnityMvcActivator.Shutdown))]
+using Unity.AspNet.Mvc;
+
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(ShoppingEcommerce.Web.UnityMvcActivator), nameof(ShoppingEcommerce.Web.UnityMvcActivator.Start))]
+[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(ShoppingEcommerce.Web.UnityMvcActivator), nameof(ShoppingEcommerce.Web.UnityMvcActivator.Shutdown))]
 
 namespace ShoppingEcommerce.Web
 {
@@ -21,12 +19,12 @@ namespace ShoppingEcommerce.Web
         public static void Start() 
         {
             FilterProviders.Providers.Remove(FilterProviders.Providers.OfType<FilterAttributeFilterProvider>().First());
-
             FilterProviders.Providers.Add(new UnityFilterAttributeFilterProvider(UnityConfig.Container));
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(UnityConfig.Container));
 
-            DynamicModuleUtility.RegisterModule(typeof(UnityPerRequestHttpModule));
+            // TODO: Uncomment if you want to use PerRequestLifetimeManager
+            // Microsoft.Web.Infrastructure.DynamicModuleHelper.DynamicModuleUtility.RegisterModule(typeof(UnityPerRequestHttpModule));
         }
 
         /// <summary>

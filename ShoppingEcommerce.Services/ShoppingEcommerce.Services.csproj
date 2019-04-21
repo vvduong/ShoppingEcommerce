@@ -41,7 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Services\ILoggingService.cs" />
+    <Compile Include="Pagination\IPagination.cs" />
+    <Compile Include="Pagination\Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\CertificateService.cs" />
+    <Compile Include="Security\EncryptionService.cs" />
+    <Compile Include="Services\LoggingService.cs" />
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="UnitOfWorkConfig.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

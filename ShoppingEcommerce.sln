@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingEcommerce.Utilities
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingEcommerce.IoC", "ShoppingEcommerce.IoC\ShoppingEcommerce.IoC.csproj", "{8935B75B-8EE6-4E32-B4D0-25C6A73ED29D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingEcommerce.Core", "ShoppingEcommerce.Core\ShoppingEcommerce.Core.csproj", "{A138EB2A-EEE1-4DD6-B153-E1C3DC61DA47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingEcommerce.Mapper", "ShoppingEcommerce.Mapper\ShoppingEcommerce.Mapper.csproj", "{6A8F5A2F-4918-4E9E-BC54-970FFF5A47ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{8935B75B-8EE6-4E32-B4D0-25C6A73ED29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8935B75B-8EE6-4E32-B4D0-25C6A73ED29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8935B75B-8EE6-4E32-B4D0-25C6A73ED29D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A138EB2A-EEE1-4DD6-B153-E1C3DC61DA47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A138EB2A-EEE1-4DD6-B153-E1C3DC61DA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A138EB2A-EEE1-4DD6-B153-E1C3DC61DA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A138EB2A-EEE1-4DD6-B153-E1C3DC61DA47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A8F5A2F-4918-4E9E-BC54-970FFF5A47ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A8F5A2F-4918-4E9E-BC54-970FFF5A47ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A8F5A2F-4918-4E9E-BC54-970FFF5A47ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A8F5A2F-4918-4E9E-BC54-970FFF5A47ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

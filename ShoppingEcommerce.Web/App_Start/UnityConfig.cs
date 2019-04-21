@@ -1,8 +1,5 @@
-using LacViet.SurePortal.Core.Tasks;
-using LacViet.SurePortal.Data.DependencyResolvers;
-using LacViet.SurePortal.IoC;
 using System;
-using LacViet.SurePortal.Infrastructure.Tasks;
+
 using Unity;
 
 namespace ShoppingEcommerce.Web
@@ -13,21 +10,18 @@ namespace ShoppingEcommerce.Web
     public static class UnityConfig
     {
         #region Unity Container
-
-        private static Lazy<IUnityContainer> container = new Lazy<IUnityContainer>(() =>
-        {
-            var container = new UnityContainer();
-
-            RegisterTypes(container);
-
-            return container;
-        });
+        private static Lazy<IUnityContainer> container =
+          new Lazy<IUnityContainer>(() =>
+          {
+              var container = new UnityContainer();
+              RegisterTypes(container);
+              return container;
+          });
 
         /// <summary>
         /// Configured Unity Container.
         /// </summary>
         public static IUnityContainer Container => container.Value;
-
         #endregion
 
         /// <summary>
@@ -42,14 +36,12 @@ namespace ShoppingEcommerce.Web
         /// </remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            UnityHelper.BuildUnityContainer(container);
+            // NOTE: To load from web.config uncomment the line below.
+            // Make sure to add a Unity.Configuration to the using statements.
+            // container.LoadConfiguration();
 
-            UnityDependencyResolver.DependencyResolve(container);
-
-            foreach (var task in container.ResolveAll<IUnityDependencyResolver>())
-            {
-                task.ResolveDependency(container);
-            }
+            // TODO: Register your type's mappings here.
+            // container.RegisterType<IProductRepository, ProductRepository>();
         }
     }
 }

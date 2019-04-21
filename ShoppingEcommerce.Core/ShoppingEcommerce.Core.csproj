@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A138EB2A-EEE1-4DD6-B153-E1C3DC61DA47}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShoppingEcommerce.Core</RootNamespace>
+    <AssemblyName>ShoppingEcommerce.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.EF6, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.EF6.2.0.0\lib\net461\AutoMapper.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="DelegateDecompiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.0.25.0\lib\net45\DelegateDecompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="DelegateDecompiler.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.EntityFramework.0.25.0\lib\net45\DelegateDecompiler.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.9.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Reflection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Reflection.Core.1.1.1\lib\net45\Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=4.1.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.10.3\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.10.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Configuration.5.10.0\lib\net47\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.10.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.10.3\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.10.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.10.0\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.10.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.Configuration.5.10.0\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=5.10.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.RegistrationByConvention.5.10.0\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=5.10.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.ServiceLocation.5.10.0\lib\net47\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstraction\AggregateRoot.cs" />
+    <Compile Include="Abstraction\Entity.cs" />
+    <Compile Include="Abstraction\IBuildingSpecification.cs" />
+    <Compile Include="Abstraction\ValueObject.cs" />
+    <Compile Include="Business\Schedules\IExpectEndDate.cs" />
+    <Compile Include="Business\Schedules\IExpectIntervalFrequently.cs" />
+    <Compile Include="Business\Schedules\IExpectModuleId.cs" />
+    <Compile Include="Business\Schedules\IExpectObjectId.cs" />
+    <Compile Include="Business\Schedules\IExpectScheduleType.cs" />
+    <Compile Include="Business\Schedules\IExpectStartDate.cs" />
+    <Compile Include="Business\Schedules\Schedule.cs" />
+    <Compile Include="Business\Schedules\ScheduleDayOfWeek.cs" />
+    <Compile Include="Business\Schedules\ScheduleMonthOfYear.cs" />
+    <Compile Include="Business\Schedules\ScheduleSpecification.cs" />
+    <Compile Include="Business\Schedules\ScheduleTrackingType.cs" />
+    <Compile Include="Business\Schedules\ScheduleType.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Components\DataManager.cs" />
+    <Compile Include="Components\Grid.cs" />
+    <Compile Include="Components\TreeView.cs" />
+    <Compile Include="Constants\AppConstants.cs" />
+    <Compile Include="Constants\CacheKeys.cs" />
+    <Compile Include="DomainEvent\DomainEventDispatcher.cs" />
+    <Compile Include="DomainEvent\IDomainEvent.cs" />
+    <Compile Include="DomainEvent\IDomainEventHandler.cs" />
+    <Compile Include="DomainModel\Enums\CacheTimes.cs" />
+    <Compile Include="DomainModel\Enums\DocumentEnums.cs" />
+    <Compile Include="DomainModel\Enums\Enums.cs" />
+    <Compile Include="DomainModel\Enums\LoginType.cs" />
+    <Compile Include="DomainModel\Enums\ModuleEnums.cs" />
+    <Compile Include="DomainModel\General\JsTreeObject.cs" />
+    <Compile Include="DomainModel\General\LanguageCsvReport.cs" />
+    <Compile Include="DomainModel\General\LogEntry.cs" />
+    <Compile Include="DomainModel\General\UploadFileResult.cs" />
+    <Compile Include="Functional\Optional\Extensions\ObjectExtension.cs" />
+    <Compile Include="Functional\Optional\Extensions\SequenceExtension.cs" />
+    <Compile Include="Functional\Optional\None.cs" />
+    <Compile Include="Functional\Optional\Option.cs" />
+    <Compile Include="Functional\Optional\Some.cs" />
+    <Compile Include="Infrastructure\Mapper\AppDomainTypeFinder.cs" />
+    <Compile Include="Infrastructure\Mapper\AutoMapperConfiguration.cs" />
+    <Compile Include="Infrastructure\Mapper\IMapperConfiguration.cs" />
+    <Compile Include="Infrastructure\Mapper\ITypeFinder.cs" />
+    <Compile Include="Infrastructure\Mapper\WebAppTypeFinder.cs" />
+    <Compile Include="Interfaces\Services\IDynamicConnectionService.cs" />
+    <Compile Include="LocalizedString.cs" />
+    <Compile Include="MobileApiModel\SurePoralDataResult.cs" />
+    <Compile Include="MobileApiModel\Sureportal_Encrypting.cs" />
+    <Compile Include="Models\MyFileObject.cs" />
+    <Compile Include="Models\MyHomeTask.cs" />
+    <Compile Include="Models\MyHomeTaskObject.cs" />
+    <Compile Include="Pagination\IPagination.cs" />
+    <Compile Include="Paging\Page.cs" />
+    <Compile Include="Paging\PagedList.cs" />
+    <Compile Include="Paging\Paging.cs" />
+    <Compile Include="Persistence\AmbientDbContextLocator.cs" />
+    <Compile Include="Persistence\AmbientDbContextSuppressor.cs" />
+    <Compile Include="Persistence\DbContextCollection.cs" />
+    <Compile Include="Persistence\DbContextReadOnlyScope.cs" />
+    <Compile Include="Persistence\DbContextScope.cs" />
+    <Compile Include="Persistence\DbContextScopeFactory.cs" />
+    <Compile Include="Persistence\DbContextScopeOption.cs" />
+    <Compile Include="Persistence\DefaultDbContextFactory.cs" />
+    <Compile Include="Persistence\DocRepository.cs" />
+    <Compile Include="Persistence\IDbContextFactory.cs" />
+    <Compile Include="Persistence\Repository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Specifications\AndSpecification.cs" />
+    <Compile Include="Specifications\IdentitySpecification.cs" />
+    <Compile Include="Specifications\NotSpecification.cs" />
+    <Compile Include="Specifications\OrSpecification.cs" />
+    <Compile Include="Specifications\ParameterReplaceExpressionVisitor.cs" />
+    <Compile Include="Specifications\Specification.cs" />
+    <Compile Include="Specifications\TrackingDocuments\TrackingDocumentInDueDateSpecification.cs" />
+    <Compile Include="Specifications\TrackingDocuments\TrackingDocumentOutOfDateSpecification.cs" />
+    <Compile Include="Tasks\IExecuteOnBeginRequest.cs" />
+    <Compile Include="Tasks\IExecuteOnEndRequest.cs" />
+    <Compile Include="Tasks\IExecuteOnError.cs" />
+    <Compile Include="Tasks\IExecuteOnStart.cs" />
+    <Compile Include="Utils\ApplicationResources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DomainModel\Entities\" />
+    <Folder Include="DomainModel\Events\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppingEcommerce.DataAccess\ShoppingEcommerce.DataAccess.csproj">
+      <Project>{f413fa7f-71dc-4bcf-b39d-68df9859b793}</Project>
+      <Name>ShoppingEcommerce.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoppingEcommerce.Mapper\ShoppingEcommerce.Mapper.csproj">
+      <Project>{6a8f5a2f-4918-4e9e-bc54-970fff5a47ed}</Project>
+      <Name>ShoppingEcommerce.Mapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
