@@ -5,7 +5,7 @@ using System.Collections;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
-using Unity.Attributes;
+using Unity;
 using System.Security.Principal;
 using System.Collections.Generic;
 
@@ -13,7 +13,7 @@ namespace ShoppingEcommerce.Services
 {
     public partial class UnitOfWork : IUnitOfWork
     {
-        public SurePortalContext context;
+        public ShoppingCartEntities context;
         private DbContextTransaction transaction;
         //private readonly IUnityContainer unityContainer;
 
@@ -29,7 +29,7 @@ namespace ShoppingEcommerce.Services
         /// <summary>
         /// Constructor
         /// </summary>
-        public UnitOfWork(SurePortalContext context)
+        public UnitOfWork(ShoppingCartEntities context)
         {
             this.context = context;
         }
@@ -298,7 +298,7 @@ namespace ShoppingEcommerce.Services
 
     public partial class DocUnitOfWork : IDocUnitOfWork
     {
-        public SurePortalContext context;
+        public ShoppingCartEntities context;
         private DbContextTransaction transaction;
         //private readonly IUnityContainer unityContainer;
         private Hashtable services { get; set; }
@@ -315,7 +315,7 @@ namespace ShoppingEcommerce.Services
         /// </summary>
         public DocUnitOfWork(/*IUnityContainer unityContainer*/)
         {
-            this.context = new SurePortalContext();
+            this.context = new ShoppingCartEntities();
             //this.unityContainer = unityContainer;
         }
 
