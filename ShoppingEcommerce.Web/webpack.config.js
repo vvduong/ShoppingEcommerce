@@ -16,7 +16,7 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ],
-      },      {
+      }, {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -46,6 +46,20 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
+    proxy: {
+
+
+      '*': {
+
+
+        target: 'http://localhost:58286/',
+
+
+        changeOrigin: true
+
+      }
+
+    },
     historyApiFallback: true,
     noInfo: true,
     overlay: true

@@ -66,8 +66,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LacViet.SurePortal.Identity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\LacViet.SurePortal.Identity.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
@@ -410,10 +417,13 @@
     <Content Include="Content\vendor\slick\slick.js" />
     <Content Include="Content\vendor\slick\slick.min.js" />
     <Content Include="Content\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="dist\build.js" />
+    <Content Include="dist\logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Libs\LacViet.SurePortal.Identity.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package.json" />
@@ -523,6 +533,9 @@
     <Content Include="Content\vendor\slick\slick-theme.scss" />
     <Content Include="Content\vendor\slick\slick.less" />
     <Content Include="Content\vendor\slick\slick.scss" />
+    <Content Include="dist\build.js.map" />
+    <Content Include=".babelrc" />
+    <Content Include="package-lock.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -559,6 +572,7 @@
     <Folder Include="Areas\Product\Controllers\" />
     <Folder Include="Areas\Product\Models\" />
     <Folder Include="Areas\Product\Views\Shared\" />
+    <Folder Include="Identity\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\first\" />
     <Folder Include="Scripts\second\" />
