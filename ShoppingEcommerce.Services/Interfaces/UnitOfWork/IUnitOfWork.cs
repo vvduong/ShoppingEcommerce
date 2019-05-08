@@ -21,4 +21,14 @@ namespace ShoppingEcommerce.Services
 
         bool ChangeConnection(string connectionString);
     }
+
+    public partial interface IProductUnitOfWork : IDisposable
+    {
+        //TService GetService<TService>();
+        TContext GetContext<TContext>() where TContext : class;
+        void BeginTransaction();
+        void Commit();
+
+        bool ChangeConnection(string connectionString);
+    }
 }

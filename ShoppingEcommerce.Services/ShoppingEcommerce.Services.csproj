@@ -102,9 +102,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\ProductDTO.cs" />
     <Compile Include="Interfaces\Security\ICertificateService.cs" />
     <Compile Include="Interfaces\Security\IEncryptionService.cs" />
+    <Compile Include="Interfaces\Services\ICacheService.cs" />
     <Compile Include="Interfaces\Services\ILoggingService.cs" />
+    <Compile Include="Interfaces\Services\IProductService.cs" />
+    <Compile Include="Interfaces\Services\IService.cs" />
     <Compile Include="Interfaces\UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="Interfaces\UnitOfWork\IUnitOfWorkManager.cs" />
     <Compile Include="Pagination\IPagination.cs" />
@@ -113,6 +117,7 @@
     <Compile Include="Security\CertificateService.cs" />
     <Compile Include="Security\EncryptionService.cs" />
     <Compile Include="Services\LoggingService.cs" />
+    <Compile Include="Services\ProductService.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
