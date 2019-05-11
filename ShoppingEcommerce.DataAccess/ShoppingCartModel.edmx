@@ -318,6 +318,13 @@
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="SP_Select_Products_MultiFilters" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryID" Type="int" Mode="In" />
+          <Parameter Name="KeyWord" Type="nvarchar" Mode="In" />
+          <Parameter Name="Page" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="OrderBy" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="ShoppingCartModelStoreContainer">
           <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
@@ -429,7 +436,7 @@
           </Key>
           <Property Name="MenuTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Menus" Relationship="Self.FK_Menus_MenuType" FromRole="MenuType" ToRole="Menu" />
+          <NavigationProperty Name="Menu" Relationship="Self.FK_Menus_MenuType" FromRole="MenuType" ToRole="Menu" />
         </EntityType>
         <EntityType Name="New">
           <Key>
@@ -453,7 +460,7 @@
           <Property Name="ViewCount" Type="Int32" />
           <Property Name="TagID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="NewCategory" Relationship="Self.FK_New_NewCategory" FromRole="New" ToRole="NewCategory" />
-          <NavigationProperty Name="Tags" Relationship="Self.NewTag" FromRole="New" ToRole="Tag" />
+          <NavigationProperty Name="Tag" Relationship="Self.NewTag" FromRole="New" ToRole="Tag" />
         </EntityType>
         <EntityType Name="NewCategory">
           <Key>
@@ -473,7 +480,7 @@
           <Property Name="MetaDescriptions" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="ShowOnHome" Type="Boolean" />
-          <NavigationProperty Name="News" Relationship="Self.FK_New_NewCategory" FromRole="NewCategory" ToRole="New" />
+          <NavigationProperty Name="New" Relationship="Self.FK_New_NewCategory" FromRole="NewCategory" ToRole="New" />
         </EntityType>
         <EntityType Name="ProductCategory">
           <Key>
@@ -495,7 +502,7 @@
           <Property Name="ShowOnHome" Type="Boolean" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Products_Categories1" FromRole="ProductCategory" ToRole="Products" />
         </EntityType>
-        <EntityType Name="Product">
+        <EntityType Name="Products">
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
@@ -539,7 +546,7 @@
           <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="Boolean" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -565,7 +572,7 @@
           </Key>
           <Property Name="TagID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TagName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="News" Relationship="Self.NewTag" FromRole="Tag" ToRole="New" />
+          <NavigationProperty Name="New" Relationship="Self.NewTag" FromRole="Tag" ToRole="New" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -611,7 +618,7 @@
         </Association>
         <Association Name="FK_Products_Categories1">
           <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="0..1" />
-          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductCategory">
               <PropertyRef Name="CategoryID" />
@@ -626,36 +633,36 @@
           <End Role="Tag" Type="Self.Tag" Multiplicity="*" />
         </Association>
         <EntityContainer Name="ShoppingCartEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Abouts" EntityType="Self.About" />
-          <EntitySet Name="Contacts" EntityType="Self.Contact" />
-          <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
-          <EntitySet Name="Footers" EntityType="Self.Footer" />
-          <EntitySet Name="Menus" EntityType="Self.Menu" />
-          <EntitySet Name="MenuTypes" EntityType="Self.MenuType" />
-          <EntitySet Name="News" EntityType="Self.New" />
-          <EntitySet Name="NewCategories" EntityType="Self.NewCategory" />
-          <EntitySet Name="ProductCategories" EntityType="Self.ProductCategory" />
-          <EntitySet Name="Products" EntityType="Self.Product" />
-          <EntitySet Name="Sliders" EntityType="Self.Slider" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="SystemConfigs" EntityType="Self.SystemConfig" />
-          <EntitySet Name="Tags" EntityType="Self.Tag" />
-          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="About" EntityType="Self.About" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" />
+          <EntitySet Name="Feedback" EntityType="Self.Feedback" />
+          <EntitySet Name="Footer" EntityType="Self.Footer" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" />
+          <EntitySet Name="MenuType" EntityType="Self.MenuType" />
+          <EntitySet Name="New" EntityType="Self.New" />
+          <EntitySet Name="NewCategory" EntityType="Self.NewCategory" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" />
+          <EntitySet Name="Products" EntityType="Self.Products" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="SystemConfig" EntityType="Self.SystemConfig" />
+          <EntitySet Name="Tag" EntityType="Self.Tag" />
+          <EntitySet Name="User" EntityType="Self.User" />
           <AssociationSet Name="FK_Menus_MenuType" Association="Self.FK_Menus_MenuType">
-            <End Role="MenuType" EntitySet="MenuTypes" />
-            <End Role="Menu" EntitySet="Menus" />
+            <End Role="MenuType" EntitySet="MenuType" />
+            <End Role="Menu" EntitySet="Menu" />
           </AssociationSet>
           <AssociationSet Name="FK_New_NewCategory" Association="Self.FK_New_NewCategory">
-            <End Role="NewCategory" EntitySet="NewCategories" />
-            <End Role="New" EntitySet="News" />
+            <End Role="NewCategory" EntitySet="NewCategory" />
+            <End Role="New" EntitySet="New" />
           </AssociationSet>
           <AssociationSet Name="FK_Products_Categories1" Association="Self.FK_Products_Categories1">
-            <End Role="ProductCategory" EntitySet="ProductCategories" />
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
           <AssociationSet Name="NewTag" Association="Self.NewTag">
-            <End Role="New" EntitySet="News" />
-            <End Role="Tag" EntitySet="Tags" />
+            <End Role="New" EntitySet="New" />
+            <End Role="Tag" EntitySet="Tag" />
           </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -686,6 +693,13 @@
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_Select_Products_MultiFilters" ReturnType="Collection(ShoppingCartModel.SP_Select_Products_MultiFilters_Result)">
+            <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+            <Parameter Name="KeyWord" Mode="In" Type="String" />
+            <Parameter Name="Page" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="OrderBy" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -699,13 +713,38 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="SP_Select_Products_MultiFilters_Result">
+          <Property Type="Int32" Name="ProductID" Nullable="false" />
+          <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="MetaTitle" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="MoreImages" Nullable="true" MaxLength="Max" />
+          <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="PromotionPrice" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="IncludeVAT" Nullable="true" />
+          <Property Type="Int32" Name="Quantity" Nullable="true" />
+          <Property Type="Int32" Name="CategoryID" Nullable="true" />
+          <Property Type="String" Name="Detail" Nullable="true" MaxLength="Max" />
+          <Property Type="Int32" Name="Warranty" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MetaKeywords" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="MetaDescriptions" Nullable="true" MaxLength="250" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="DateTime" Name="TopHot" Nullable="true" />
+          <Property Type="Int32" Name="ViewCounts" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ShoppingCartModelStoreContainer" CdmEntityContainer="ShoppingCartEntities">
-          <EntitySetMapping Name="Abouts">
+          <EntitySetMapping Name="About">
             <EntityTypeMapping TypeName="ShoppingCartModel.About">
               <MappingFragment StoreEntitySet="About">
                 <ScalarProperty Name="AboutID" ColumnName="AboutID" />
@@ -724,7 +763,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Contacts">
+          <EntitySetMapping Name="Contact">
             <EntityTypeMapping TypeName="ShoppingCartModel.Contact">
               <MappingFragment StoreEntitySet="Contact">
                 <ScalarProperty Name="ContactID" ColumnName="ContactID" />
@@ -733,7 +772,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Feedbacks">
+          <EntitySetMapping Name="Feedback">
             <EntityTypeMapping TypeName="ShoppingCartModel.Feedback">
               <MappingFragment StoreEntitySet="Feedback">
                 <ScalarProperty Name="FeedbackID" ColumnName="FeedbackID" />
@@ -747,7 +786,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Footers">
+          <EntitySetMapping Name="Footer">
             <EntityTypeMapping TypeName="ShoppingCartModel.Footer">
               <MappingFragment StoreEntitySet="Footer">
                 <ScalarProperty Name="FooterID" ColumnName="FooterID" />
@@ -756,7 +795,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Menus">
+          <EntitySetMapping Name="Menu">
             <EntityTypeMapping TypeName="ShoppingCartModel.Menu">
               <MappingFragment StoreEntitySet="Menu">
                 <ScalarProperty Name="MenuID" ColumnName="MenuID" />
@@ -770,7 +809,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MenuTypes">
+          <EntitySetMapping Name="MenuType">
             <EntityTypeMapping TypeName="ShoppingCartModel.MenuType">
               <MappingFragment StoreEntitySet="MenuType">
                 <ScalarProperty Name="MenuTypeID" ColumnName="MenuTypeID" />
@@ -778,7 +817,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="News">
+          <EntitySetMapping Name="New">
             <EntityTypeMapping TypeName="ShoppingCartModel.New">
               <MappingFragment StoreEntitySet="New">
                 <ScalarProperty Name="NewID" ColumnName="NewID" />
@@ -801,7 +840,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="NewCategories">
+          <EntitySetMapping Name="NewCategory">
             <EntityTypeMapping TypeName="ShoppingCartModel.NewCategory">
               <MappingFragment StoreEntitySet="NewCategory">
                 <ScalarProperty Name="NewCategoryID" ColumnName="NewCategoryID" />
@@ -821,7 +860,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProductCategories">
+          <EntitySetMapping Name="ProductCategory">
             <EntityTypeMapping TypeName="ShoppingCartModel.ProductCategory">
               <MappingFragment StoreEntitySet="ProductCategory">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
@@ -842,7 +881,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="ShoppingCartModel.Product">
+            <EntityTypeMapping TypeName="ShoppingCartModel.Products">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
@@ -870,7 +909,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Sliders">
+          <EntitySetMapping Name="Slider">
             <EntityTypeMapping TypeName="ShoppingCartModel.Slider">
               <MappingFragment StoreEntitySet="Slider">
                 <ScalarProperty Name="SlideID" ColumnName="SlideID" />
@@ -887,7 +926,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="ShoppingCartModel.sysdiagram">
+            <EntityTypeMapping TypeName="ShoppingCartModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -897,7 +936,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SystemConfigs">
+          <EntitySetMapping Name="SystemConfig">
             <EntityTypeMapping TypeName="ShoppingCartModel.SystemConfig">
               <MappingFragment StoreEntitySet="SystemConfig">
                 <ScalarProperty Name="ConfigID" ColumnName="ConfigID" />
@@ -908,7 +947,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tags">
+          <EntitySetMapping Name="Tag">
             <EntityTypeMapping TypeName="ShoppingCartModel.Tag">
               <MappingFragment StoreEntitySet="Tag">
                 <ScalarProperty Name="TagID" ColumnName="TagID" />
@@ -916,7 +955,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Users">
+          <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="ShoppingCartModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -966,6 +1005,35 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ShoppingCartModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="SP_Select_Products_MultiFilters" FunctionName="ShoppingCartModel.Store.SP_Select_Products_MultiFilters">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ShoppingCartModel.SP_Select_Products_MultiFilters_Result">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="MoreImages" ColumnName="MoreImages" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PromotionPrice" ColumnName="PromotionPrice" />
+                <ScalarProperty Name="IncludeVAT" ColumnName="IncludeVAT" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="MetaKeywords" ColumnName="MetaKeywords" />
+                <ScalarProperty Name="MetaDescriptions" ColumnName="MetaDescriptions" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TopHot" ColumnName="TopHot" />
+                <ScalarProperty Name="ViewCounts" ColumnName="ViewCounts" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ShoppingCartModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
@@ -981,7 +1049,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

@@ -17,7 +17,7 @@ namespace ShoppingEcommerce.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public New()
         {
-            this.Tags = new HashSet<Tag>();
+            this.Tag = new HashSet<Tag>();
         }
     
         public int NewID { get; set; }
@@ -40,6 +40,6 @@ namespace ShoppingEcommerce.DataAccess
     
         public virtual NewCategory NewCategory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tag> Tags { get; set; }
+        public virtual ICollection<Tag> Tag { get; set; }
     }
 }

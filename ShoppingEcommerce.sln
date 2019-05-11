@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingEcommerce.Core", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingEcommerce.Mapper", "ShoppingEcommerce.Mapper\ShoppingEcommerce.Mapper.csproj", "{6A8F5A2F-4918-4E9E-BC54-970FFF5A47ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingEcommerce.Repository", "ShoppingEcommerce.Repository\ShoppingEcommerce.Repository.csproj", "{EAEFE0C4-7172-4F7C-8663-573A5DECE217}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{6A8F5A2F-4918-4E9E-BC54-970FFF5A47ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A8F5A2F-4918-4E9E-BC54-970FFF5A47ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A8F5A2F-4918-4E9E-BC54-970FFF5A47ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAEFE0C4-7172-4F7C-8663-573A5DECE217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAEFE0C4-7172-4F7C-8663-573A5DECE217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAEFE0C4-7172-4F7C-8663-573A5DECE217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAEFE0C4-7172-4F7C-8663-573A5DECE217}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

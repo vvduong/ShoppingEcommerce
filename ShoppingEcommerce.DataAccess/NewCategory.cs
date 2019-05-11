@@ -17,7 +17,7 @@ namespace ShoppingEcommerce.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NewCategory()
         {
-            this.News = new HashSet<New>();
+            this.New = new HashSet<New>();
         }
     
         public int NewCategoryID { get; set; }
@@ -36,6 +36,6 @@ namespace ShoppingEcommerce.DataAccess
         public Nullable<bool> ShowOnHome { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<New> News { get; set; }
+        public virtual ICollection<New> New { get; set; }
     }
 }

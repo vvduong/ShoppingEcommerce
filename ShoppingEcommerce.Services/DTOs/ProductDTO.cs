@@ -15,6 +15,7 @@ namespace ShoppingEcommerce.Services.DTOs
         public string Description { get; set; }
         public string ProductImage { get; set; }
         public string MoreImages { get; set; }
-        public double Price { get; set; }
+        public decimal? Price { get; set; }
+        public bool? Status { get; set; }
     }
 }

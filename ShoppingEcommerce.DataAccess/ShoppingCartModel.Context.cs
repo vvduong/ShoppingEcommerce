@@ -27,21 +27,21 @@ namespace ShoppingEcommerce.DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<About> Abouts { get; set; }
-        public virtual DbSet<Contact> Contacts { get; set; }
-        public virtual DbSet<Feedback> Feedbacks { get; set; }
-        public virtual DbSet<Footer> Footers { get; set; }
-        public virtual DbSet<Menu> Menus { get; set; }
-        public virtual DbSet<MenuType> MenuTypes { get; set; }
-        public virtual DbSet<New> News { get; set; }
-        public virtual DbSet<NewCategory> NewCategories { get; set; }
-        public virtual DbSet<ProductCategory> ProductCategories { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Slider> Sliders { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<SystemConfig> SystemConfigs { get; set; }
-        public virtual DbSet<Tag> Tags { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<About> About { get; set; }
+        public virtual DbSet<Contact> Contact { get; set; }
+        public virtual DbSet<Feedback> Feedback { get; set; }
+        public virtual DbSet<Footer> Footer { get; set; }
+        public virtual DbSet<Menu> Menu { get; set; }
+        public virtual DbSet<MenuType> MenuType { get; set; }
+        public virtual DbSet<New> New { get; set; }
+        public virtual DbSet<NewCategory> NewCategory { get; set; }
+        public virtual DbSet<ProductCategory> ProductCategory { get; set; }
+        public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<Slider> Slider { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<SystemConfig> SystemConfig { get; set; }
+        public virtual DbSet<Tag> Tag { get; set; }
+        public virtual DbSet<User> User { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -139,6 +139,31 @@ namespace ShoppingEcommerce.DataAccess
                 new ObjectParameter("new_diagramname", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual ObjectResult<SP_Select_Products_MultiFilters_Result> SP_Select_Products_MultiFilters(Nullable<int> categoryID, string keyWord, Nullable<int> page, Nullable<int> pageSize, string orderBy)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var keyWordParameter = keyWord != null ?
+                new ObjectParameter("KeyWord", keyWord) :
+                new ObjectParameter("KeyWord", typeof(string));
+    
+            var pageParameter = page.HasValue ?
+                new ObjectParameter("Page", page) :
+                new ObjectParameter("Page", typeof(int));
+    
+            var pageSizeParameter = pageSize.HasValue ?
+                new ObjectParameter("PageSize", pageSize) :
+                new ObjectParameter("PageSize", typeof(int));
+    
+            var orderByParameter = orderBy != null ?
+                new ObjectParameter("OrderBy", orderBy) :
+                new ObjectParameter("OrderBy", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Select_Products_MultiFilters_Result>("SP_Select_Products_MultiFilters", categoryIDParameter, keyWordParameter, pageParameter, pageSizeParameter, orderByParameter);
         }
     
         public virtual int sp_upgraddiagrams()

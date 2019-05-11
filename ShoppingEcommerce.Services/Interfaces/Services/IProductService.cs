@@ -1,4 +1,5 @@
 ﻿using ShoppingEcommerce.Core.Paging;
+using ShoppingEcommerce.Repository;
 using ShoppingEcommerce.DataAccess;
 using ShoppingEcommerce.Services.DTOs;
 using System;
@@ -6,14 +7,14 @@ using System.Collections.Generic;
 
 namespace ShoppingEcommerce.Services.Interfaces.Services
 {
-    public interface IProductService : IService<Product>
+    public interface IProductService : IService<Products>
     {
         #region Insert
         #endregion
 
         #region Update
 
-        void UpdateBussiness(Product item);
+        void UpdateBussiness(Products item);
 
 
 
@@ -41,7 +42,7 @@ namespace ShoppingEcommerce.Services.Interfaces.Services
         /// <param name="paramValues">danh sách các đối số và giá trị tương ứng ví dụ: @DocStatus;1,2,3</param>
         /// <param name="orderBy">Chỉ định sort theo tiêu chí cột nào, tăng dần hay giảm dần</param>
         /// <returns></returns>
-        Paging<ProductDTO> GetProductWithPaging(string keyWord, int? page, List<string> paramValues, string orderBy = "Created DESC", Guid currentUserID = default(Guid), bool isCount = false);
+        Paging<ProductDTO> GetProductWithPaging(int categoryID,string keyWord, int? page, List<string> paramValues, string orderBy = "Created DESC", Guid currentUserID = default(Guid), bool isCount = false);
 
 
         /// <summary>
@@ -59,7 +60,7 @@ namespace ShoppingEcommerce.Services.Interfaces.Services
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        Product GetProductDetails(Guid? Id);
+        Products GetProductDetails(int Id);
 
         
         #endregion

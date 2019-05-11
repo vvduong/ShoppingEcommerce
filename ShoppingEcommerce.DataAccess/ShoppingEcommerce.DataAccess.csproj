@@ -78,10 +78,10 @@
     <Compile Include="NewCategory.cs">
       <DependentUpon>ShoppingCartModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs">
+    <Compile Include="ProductCategory.cs">
       <DependentUpon>ShoppingCartModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductCategory.cs">
+    <Compile Include="Products.cs">
       <DependentUpon>ShoppingCartModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,7 +110,10 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>ShoppingCartModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
+    <Compile Include="SP_Select_Products_MultiFilters_Result.cs">
+      <DependentUpon>ShoppingCartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
       <DependentUpon>ShoppingCartModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SystemConfig.cs">
@@ -135,6 +138,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppingEcommerce.Utilities\ShoppingEcommerce.Utilities.csproj">
+      <Project>{03fe95c6-4a4b-4e77-8400-bfa2690754c9}</Project>
+      <Name>ShoppingEcommerce.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ShoppingCartModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ShoppingCartModel.edmx</DependentUpon>
@@ -145,15 +157,6 @@
       <DependentUpon>ShoppingCartModel.edmx</DependentUpon>
       <LastGenOutput>ShoppingCartModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ShoppingEcommerce.Utilities\ShoppingEcommerce.Utilities.csproj">
-      <Project>{03fe95c6-4a4b-4e77-8400-bfa2690754c9}</Project>
-      <Name>ShoppingEcommerce.Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

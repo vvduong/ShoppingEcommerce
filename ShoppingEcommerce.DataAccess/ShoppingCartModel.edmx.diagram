@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="364d195f88d848969db655c7604641a8" Name="Diagram1">
+      <Diagram DiagramId="6d6c534502064b8b90858aa468c9282d" Name="Diagram1" ZoomLevel="75">
         <EntityTypeShape EntityType="ShoppingCartModel.About" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ShoppingCartModel.Contact" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ShoppingCartModel.Feedback" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
@@ -14,9 +14,9 @@
         <EntityTypeShape EntityType="ShoppingCartModel.New" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ShoppingCartModel.NewCategory" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ShoppingCartModel.ProductCategory" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShoppingCartModel.Product" Width="1.5" PointX="8" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoppingCartModel.Products" Width="1.5" PointX="8" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ShoppingCartModel.Slider" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShoppingCartModel.sysdiagram" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoppingCartModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ShoppingCartModel.SystemConfig" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ShoppingCartModel.Tag" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ShoppingCartModel.User" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />

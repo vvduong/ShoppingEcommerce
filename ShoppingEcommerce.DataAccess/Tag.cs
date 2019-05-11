@@ -17,13 +17,13 @@ namespace ShoppingEcommerce.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tag()
         {
-            this.News = new HashSet<New>();
+            this.New = new HashSet<New>();
         }
     
         public string TagID { get; set; }
         public string TagName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<New> News { get; set; }
+        public virtual ICollection<New> New { get; set; }
     }
 }

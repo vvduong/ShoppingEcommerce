@@ -17,13 +17,13 @@ namespace ShoppingEcommerce.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MenuType()
         {
-            this.Menus = new HashSet<Menu>();
+            this.Menu = new HashSet<Menu>();
         }
     
         public int MenuTypeID { get; set; }
         public string MenuName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Menu> Menus { get; set; }
+        public virtual ICollection<Menu> Menu { get; set; }
     }
 }

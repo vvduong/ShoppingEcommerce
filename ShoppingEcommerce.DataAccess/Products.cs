@@ -12,7 +12,7 @@ namespace ShoppingEcommerce.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Products
     {
         public int ProductID { get; set; }
         public string ProductCode { get; set; }

@@ -133,6 +133,10 @@
       <Project>{6a8f5a2f-4918-4e9e-bc54-970fff5a47ed}</Project>
       <Name>ShoppingEcommerce.Mapper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShoppingEcommerce.Repository\ShoppingEcommerce.Repository.csproj">
+      <Project>{eaefe0c4-7172-4f7c-8663-573a5dece217}</Project>
+      <Name>ShoppingEcommerce.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShoppingEcommerce.Utilities\ShoppingEcommerce.Utilities.csproj">
       <Project>{03fe95c6-4a4b-4e77-8400-bfa2690754c9}</Project>
       <Name>ShoppingEcommerce.Utilities</Name>
