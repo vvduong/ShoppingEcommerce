@@ -1,4 +1,4 @@
-﻿namespace ShoppingEcommerce.Functional.Either
+﻿namespace ShoppingEcommerce.Infrastructure.Functional.Either
 {
     public class Right<TLeft, TRight> : Either<TLeft, TRight>
     {

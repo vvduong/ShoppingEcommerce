@@ -1,4 +1,4 @@
-﻿namespace ShoppingEcommerce.Specifications
+﻿namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public interface IDynamicQuerySpecification<TEntity, out TValue>
         : IQuerySpecification<TEntity> where TEntity : class

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using ShoppingEcommerce.Specifications;
+using ShoppingEcommerce.Infrastructure.Specifications;
 
-namespace ShoppingEcommerce.Extensions
+namespace ShoppingEcommerce.Infrastructure.Extensions
 {
     public static class SpecificationExtensions
     {

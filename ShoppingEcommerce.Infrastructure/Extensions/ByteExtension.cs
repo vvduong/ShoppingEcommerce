@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace ShoppingEcommerce.Extensions
+namespace ShoppingEcommerce.Infrastructure.Extensions
 {
     public static class ByteExtension
     {

@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace ShoppingEcommerce.Utilities
+namespace ShoppingEcommerce.Infrastructure.Utilities
 {
     public static class ApplicationConfiguration
     {

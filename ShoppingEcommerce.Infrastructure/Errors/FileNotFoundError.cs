@@ -1,4 +1,4 @@
-﻿namespace ShoppingEcommerce.Errors
+﻿namespace ShoppingEcommerce.Infrastructure.Errors
 {
     public class FileNotFoundError : Error
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using ShoppingEcommerce.Extensions;
+using ShoppingEcommerce.Infrastructure.Extensions;
 
-namespace ShoppingEcommerce.Specifications
+namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public class Specification<TEntity> : QuerySpecification<TEntity> where TEntity : class
     {

@@ -1,6 +1,6 @@
 ﻿using Unity;
 
-namespace ShoppingEcommerce.Tasks
+namespace ShoppingEcommerce.Infrastructure.Tasks
 {
     public interface IUnityDependencyResolver
     {

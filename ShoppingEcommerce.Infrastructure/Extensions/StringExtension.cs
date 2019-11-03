@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ShoppingEcommerce.Extensions
+namespace ShoppingEcommerce.Infrastructure.Extensions
 {
     public static class StringExtension
     {

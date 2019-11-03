@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 
-namespace ShoppingEcommerce.Specifications
+namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public class ExpressionStarter<T>
     {

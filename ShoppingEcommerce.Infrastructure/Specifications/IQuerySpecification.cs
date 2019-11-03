@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace ShoppingEcommerce.Specifications
+namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public interface IQuerySpecification<TEntity> : ISpecificationBuilder<TEntity> where TEntity : class
     {

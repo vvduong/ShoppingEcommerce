@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace ShoppingEcommerce.Specifications
+namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public class RebindParameterExpressionVisitor : ExpressionVisitor
     {

@@ -1,4 +1,4 @@
-﻿namespace ShoppingEcommerce.Specifications
+﻿namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public abstract class DynamicSpecification<TEntity, TValue> : QuerySpecification<TEntity>
         , IDynamicQuerySpecification<TEntity, TValue> where TEntity : class

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ShoppingEcommerce.Functional.Option;
-using ShoppingEcommerce.Specifications;
+using ShoppingEcommerce.Infrastructure.Functional.Option;
+using ShoppingEcommerce.Infrastructure.Specifications;
 
-namespace ShoppingEcommerce.Extensions
+namespace ShoppingEcommerce.Infrastructure.Extensions
 {
     public static class EnumerableExtension
     {

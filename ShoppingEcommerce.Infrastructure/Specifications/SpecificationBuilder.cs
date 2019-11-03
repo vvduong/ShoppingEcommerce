@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ShoppingEcommerce.Specifications
+namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public sealed class SpecificationBuilder<TEntity> : IOrderedSpecification<TEntity> where TEntity : class
     {

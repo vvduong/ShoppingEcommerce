@@ -1,4 +1,4 @@
-﻿namespace ShoppingEcommerce.Utilities
+﻿namespace ShoppingEcommerce.Infrastructure.Utilities
 {
     public enum SettingCode
     {

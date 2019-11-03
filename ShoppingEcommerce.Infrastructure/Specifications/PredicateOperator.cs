@@ -1,4 +1,4 @@
-﻿namespace ShoppingEcommerce.Specifications
+﻿namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public enum PredicateOperator
     {

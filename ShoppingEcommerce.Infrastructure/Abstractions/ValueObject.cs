@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShoppingEcommerce.Abstractions
+namespace ShoppingEcommerce.Infrastructure.Abstractions
 {
     public abstract class ValueObject
     {

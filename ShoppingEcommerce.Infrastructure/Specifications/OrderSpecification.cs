@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using ShoppingEcommerce.Utilities;
+using ShoppingEcommerce.Infrastructure.Utilities;
 
-namespace ShoppingEcommerce.Specifications
+namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public class OrderSpecification<TEntity, TResult> : IOrderSpecification<TEntity> where TEntity : class
     {

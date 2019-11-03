@@ -1,4 +1,4 @@
-﻿namespace ShoppingEcommerce.Specifications
+﻿namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public interface ISpecificationBuilder<TEntity> where TEntity : class
     {

@@ -1,4 +1,4 @@
-﻿namespace ShoppingEcommerce.Functional.Option
+﻿namespace ShoppingEcommerce.Infrastructure.Functional.Option
 {
     public abstract class Option<T>
     {

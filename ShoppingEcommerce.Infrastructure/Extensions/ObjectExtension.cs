@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using ShoppingEcommerce.Functional.Option;
+using ShoppingEcommerce.Infrastructure.Functional.Option;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace ShoppingEcommerce.Extensions
+namespace ShoppingEcommerce.Infrastructure.Extensions
 {
     public static class ObjectExtension
     {

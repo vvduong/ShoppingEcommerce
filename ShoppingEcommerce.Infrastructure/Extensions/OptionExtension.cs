@@ -1,7 +1,7 @@
 ﻿using System;
-using ShoppingEcommerce.Functional.Option;
+using ShoppingEcommerce.Infrastructure.Functional.Option;
 
-namespace ShoppingEcommerce.Extensions
+namespace ShoppingEcommerce.Infrastructure.Extensions
 {
     public static class OptionExtension
     {

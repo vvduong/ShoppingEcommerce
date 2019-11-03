@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Security.Principal;
-using ShoppingEcommerce.Extensions;
-using ShoppingEcommerce.Utilities;
+using ShoppingEcommerce.Infrastructure.Extensions;
+using ShoppingEcommerce.Infrastructure.Utilities;
 using Unity.Attributes;
 
-namespace ShoppingEcommerce.Interactors
+namespace ShoppingEcommerce.Infrastructure.Interactors
 {
     public class IdentityInteractor
     {

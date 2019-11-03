@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ShoppingEcommerce.Specifications
+namespace ShoppingEcommerce.Infrastructure.Specifications
 {
     public interface IOrderSpecification<TEntity> : ISpecificationBuilder<TEntity> where TEntity : class
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using ShoppingEcommerce.Functional.Either;
+using ShoppingEcommerce.Infrastructure.Functional.Either;
 
-namespace ShoppingEcommerce.Extensions
+namespace ShoppingEcommerce.Infrastructure.Extensions
 {
     public static class EitherExtension
     {

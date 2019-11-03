@@ -1,7 +1,7 @@
 ﻿using System;
-using ShoppingEcommerce.Utilities;
+using ShoppingEcommerce.Infrastructure.Utilities;
 
-namespace ShoppingEcommerce.Extensions
+namespace ShoppingEcommerce.Infrastructure.Extensions
 {
     public static class DateTimeExtension
     {
