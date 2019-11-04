@@ -6,7 +6,7 @@ using log4net;
 using ShoppingEcommerce.Core.Utils;
 using ShoppingEcommerce.DataAccess;
 using Unity;
-
+using Unity.Attributes;
 
 namespace ShoppingEcommerce.Core.Persistence
 {

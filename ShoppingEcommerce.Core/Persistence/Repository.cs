@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using AutoMapper;
 using ShoppingEcommerce.Mapper;
 using Unity;
-
+using Unity.Attributes;
 
 namespace ShoppingEcommerce.Core.Persistence
 {

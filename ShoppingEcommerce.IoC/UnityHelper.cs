@@ -16,6 +16,9 @@ using Unity.Injection;
 using Unity.log4net;
 using Unity.Lifetime;
 using Unity.RegistrationByConvention;
+using ShoppingEcommerce.DataAccess;
+using Unity.AspNet.Mvc;
+using ShoppingEcommerce.Infrastructure.Tasks;
 
 namespace LacViet.SurePortal.IoC
 {
@@ -87,7 +90,8 @@ namespace LacViet.SurePortal.IoC
             // and unity can not resolve ITimeSheetRepository<> when it ignore all abstract generic by default
             // so we must do this manualy
             // need another solution here, this line should be DELETE
-            container.RegisterType<SurePortalContext, SurePortalContext>(new PerRequestLifetimeManager());
+            
+            container.RegisterType<ShoppingCartEntities, ShoppingCartEntities>(new PerRequestLifetimeManager());
             container.RegisterType(typeof(IRepository<>), typeof(Repository<>), new PerResolveLifetimeManager());
             
             return container;
